@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     heartwood-service_object (0.1.0)
-      rails (~> 5.1.0)
+      rails (~> 5.1)
 
 GEM
   remote: https://rubygems.org/
