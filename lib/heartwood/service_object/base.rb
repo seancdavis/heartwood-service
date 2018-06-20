@@ -1,5 +1,5 @@
 module Heartwood
-  module ServiceObject
+  module Service
     class Base
 
       def initialize(options = {})

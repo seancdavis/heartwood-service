@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "heartwood/service_object"
+require "heartwood/service"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

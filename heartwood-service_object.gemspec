@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "heartwood/service_object/version"
+require "heartwood/service/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "heartwood-service_object"
-  spec.version       = Heartwood::ServiceObject::VERSION
+  spec.name          = "heartwood-service"
+  spec.version       = Heartwood::Service::VERSION
   spec.authors       = ["Sean C Davis"]
   spec.email         = ["scdavis41@gmail.com"]
 
   spec.summary       = %q{Simple service object DSL for Rails apps}
   spec.description   = %q{DRY up your service object code by inheriting from Heartwood's base object, which provides a few key helpers.}
-  spec.homepage      = "https://github.com/seancdavis/heartwood-service_object"
+  spec.homepage      = "https://github.com/seancdavis/heartwood-service"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

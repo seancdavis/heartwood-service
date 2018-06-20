@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    heartwood-service_object (0.1.0)
+    heartwood-service (0.1.0)
       rails (~> 5.1)
 
 GEM
@@ -126,7 +126,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  heartwood-service_object!
+  heartwood-service!
   rake (~> 10.0)
   rspec (~> 3.0)
 

@@ -1,9 +1,9 @@
 require 'rails'
 
-require 'heartwood/service_object/version'
-require 'heartwood/service_object/base'
+require 'heartwood/service/version'
+require 'heartwood/service/base'
 
 module Heartwood
-  module ServiceObject
+  module Service
   end
 end

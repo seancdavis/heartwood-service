@@ -1,7 +1,7 @@
-RSpec.describe Heartwood::ServiceObject do
+RSpec.describe Heartwood::Service do
 
   it 'has a version number' do
-    expect(Heartwood::ServiceObject::VERSION).not_to be nil
+    expect(Heartwood::Service::VERSION).not_to be nil
   end
 
 end

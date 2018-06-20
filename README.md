@@ -1,4 +1,4 @@
-Heartwood::ServiceObject
+Heartwood::Service
 ==========
 
 Heartwood's service object gem provides a simple DSL for working with service objects within your Rails app.
@@ -9,7 +9,7 @@ Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'heartwood-service_object'
+gem 'heartwood-service'
 ```
 
 And then execute:
@@ -18,14 +18,14 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install heartwood-service_object
+    $ gem install heartwood-service
 
 Usage
 ----------
 
 You can generate a new service object from the command line:
 
-    $ bundle exec rails g heartwood:service_object do_stuff
+    $ bundle exec rails g heartwood:service do_stuff
 
 `do_stuff` should be replace with the name of your service. It can be written in snake case or camel case.
 
@@ -54,7 +54,7 @@ There are three types of options which we'll refer to as _attributes_:
 Required attributes use the `required_attr` keyword and can accept a list of all required attributes:
 
 ```ruby
-class DoStuffService < Heartwood::ServiceObject::Base
+class DoStuffService < Heartwood::Service::Base
   required_attr :name, :email
 end
 ```
@@ -72,7 +72,7 @@ DoStuffService.call(name: 'Mr. F', email: 'mrf@example.com') # => nil
 These attributes are then available anywhere in your service as the name you specified.
 
 ```ruby
-class DoStuffService < Heartwood::ServiceObject::Base
+class DoStuffService < Heartwood::Service::Base
   required_attr :name, :email
 
   def call
@@ -89,7 +89,7 @@ DoStuffService.call(name: 'Mr. F', email: 'mrf@example.com') # => "Mr. F"
 Optional attributes use the `optional_attr` method and take the same approach as required attributes, except an error won't be thrown when the attribute does not exist.
 
 ```ruby
-class DoStuffService < Heartwood::ServiceObject::Base
+class DoStuffService < Heartwood::Service::Base
   optional_attr :name
 
   def call
@@ -108,7 +108,7 @@ You can also have an option with a fallback value via the `attr_with_default` me
 For these attributes, you'll have to use the `attr_with_default` method for each attribute and can not chain attributes together.
 
 ```ruby
-class DoStuffService < Heartwood::ServiceObject::Base
+class DoStuffService < Heartwood::Service::Base
   attr_with_default :name, 'Mr. F'
   attr_with_default :email, 'mrf@example.com'
 
@@ -129,7 +129,7 @@ DoStuffService.call(name: 'Mr. P') # => 'Mr. P'
 Here's an example that would create a user. It assumes there is a `User` class that has `email`, `password`, and `name` attributes.
 
 ```ruby
-class DoStuffService < Heartwood::ServiceObject::Base
+class DoStuffService < Heartwood::Service::Base
 
   required_attr :email, :password
 
@@ -154,7 +154,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 Contributing
 ----------
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/seancdavis/heartwood-service_object. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/seancdavis/heartwood-service. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 License
 ----------
@@ -164,4 +164,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 Code of Conduct
 ----------
 
-Everyone interacting in the Heartwood::ServiceObject project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/seancdavis/heartwood-service_object/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Heartwood::Service project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/seancdavis/heartwood-service/blob/master/CODE_OF_CONDUCT.md).

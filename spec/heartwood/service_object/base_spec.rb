@@ -1,8 +1,8 @@
-RSpec.describe Heartwood::ServiceObject::Base do
+RSpec.describe Heartwood::Service::Base do
 
   # ---------------------------------------- | Example service object
 
-  class MyService < Heartwood::ServiceObject::Base
+  class MyService < Heartwood::Service::Base
     required_attr :a, :b
     optional_attr :c, :d
     attr_with_default :e, 'some_string'
